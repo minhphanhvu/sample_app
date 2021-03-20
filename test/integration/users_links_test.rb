@@ -21,7 +21,7 @@ class UsersLinksTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", login_path, count: 0
     get users_path
     assert_template 'users/index'
-    assert_select "img", count: 2
+    assert_select "img", count: 15
   end
 
 end
