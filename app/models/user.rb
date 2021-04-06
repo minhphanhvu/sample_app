@@ -77,7 +77,7 @@ class User < ApplicationRecord
 
   # Display feed on home page
   def feed
-    Micropost.where("user_id = ?", id)
+    Micropost.where("user_id IN (?) OR user_id = ?", following_ids, id)
   end
 
   # Follows a user.
