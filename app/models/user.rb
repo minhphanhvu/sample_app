@@ -85,7 +85,7 @@ class User < ApplicationRecord
 
   # Follows a user.
   def follow(other_user)
-    following << other_user
+    following << other_user unless self == other_user
   end
 
   # Unfollows a user.
